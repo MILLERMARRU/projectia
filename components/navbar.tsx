@@ -5,23 +5,23 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import {
-  Home,
-  UserRound,
-  Stethoscope,
-  FileText,
+  LayoutDashboard,
+  Calendar,
+  Kanban,
+  CalendarDays,
   Menu,
   X,
-  Hospital,
+  GraduationCap,
   LogOut,
 } from "lucide-react";
 
 type NavItem = { href: string; label: string; icon: React.ElementType };
 
 const NAV_ITEMS: NavItem[] = [
-  { href: "/admin", label: "Inicio", icon: Home },
-  { href: "/admin/pacientes", label: "mi semana", icon: UserRound },
-  { href: "/admin/consultas", label: "kanban", icon: Stethoscope },
-  { href: "/admin/historiales", label: "calendario", icon: FileText },
+  { href: "/admin", label: "Inicio", icon: LayoutDashboard },
+  { href: "/admin/pacientes", label: "mi semana", icon: Calendar },
+  { href: "/admin/consultas", label: "kanban", icon: Kanban },
+  { href: "/admin/historiales", label: "calendario", icon: CalendarDays },
 ];
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
       "inline-flex items-center gap-2 rounded-xl px-4 py-4 text-sm font-medium",
       "transition-colors cursor-pointer select-none",
       active
-        ? "bg-blue-100 text-blue-700"
+        ? "bg-indigo-100 text-indigo-700"
         : "text-gray-700 hover:bg-gray-100 hover:text-gray-900",
     ].join(" ");
 
@@ -57,10 +57,10 @@ export default function Navbar() {
       <nav className="w-full flex h-20 items-center justify-between px-8 py-8">
         {/* Brand */}
         <Link href="/admin" className="flex items-center gap-2">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-blue-600 text-white">
-            <Hospital size={18} />
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-indigo-600 text-white">
+            <GraduationCap size={18} />
           </span>
-          <span className="text-lg font-bold text-gray-700">TopicUcss</span>
+          <span className="text-lg font-bold text-gray-700">TaskUcss</span>
         </Link>
 
         {/* Desktop nav */}
