@@ -73,7 +73,13 @@ const MOCK_TAREAS: TareaItem[] = [
 // ====== Utilidades ======
 function cn(...classes: (string | undefined | false)[]) { return classes.filter(Boolean).join(" "); }
 
-const Badge = ({ children, tone = "default" as "default" | "success" | "warning" | "danger" }) => (
+const Badge = ({
+  children,
+  tone = "default",
+}: {
+  children?: React.ReactNode;
+  tone?: "default" | "success" | "warning" | "danger";
+}) => (
   <span
     className={cn(
       "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
